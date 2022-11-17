@@ -1,0 +1,72 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: #000;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  .amzonLogo {
+    height: 100%;
+    .logoImage {
+      height: 100%;
+    }
+  }
+  .search {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    @media (max-width: 1440px) {
+      width: 68%;
+    }
+    @media (max-width: 1024px) {
+      width: 56%;
+    }
+    @media (max-width: 768px) {
+      width: 36%;
+    }
+    .searchInput {
+      height: 100%;
+      width: 100%;
+    }
+    .searchIcon {
+      cursor: pointer;
+      background-color: #cd9042;
+      height: 100% !important;
+      width: 40px !important;
+      padding: 5px;
+    }
+  }
+  .navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    .navOption {
+      display: flex;
+      flex-direction: column;
+      .firstSpan {
+        color: gray;
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .secondSpan {
+        cursor: pointer;
+        font-weight: 800;
+        color: #fff;
+      }
+    }
+    .navBasket {
+      .basketIcon {
+        color: #fff;
+      }
+      span {
+        color: #fff;
+        font-weight: 600;
+        margin-left: 10px;
+      }
+    }
+  }
+}
