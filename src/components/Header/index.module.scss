@@ -9,6 +9,7 @@
   top: 0;
   z-index: 100;
   .amzonLogo {
+    cursor: pointer;
     height: 100%;
     .logoImage {
       height: 100%;
@@ -59,6 +60,7 @@
       }
     }
     .navBasket {
+      cursor: pointer;
       .basketIcon {
         color: #fff;
       }

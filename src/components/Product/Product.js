@@ -1,23 +1,45 @@
-import React from "react";
+import React, { useContext } from "react";
+import { StateContext } from "../../context/StateProvider";
 import styles from "./index.module.scss";
 
 const Product = ({
+  id,
   productDetail,
   productPrice,
   productRating,
-  handleOnAddBasket,
   productImages,
 }) => {
+  const { dispatch } = useContext(StateContext);
+  const handleOnAddBasket = () => {
+    const item = {
+      id: id,
+      productDetail: productDetail,
+      productPrice: productPrice,
+      productRating: productRating,
+      productImages: productImages,
+    };
+    dispatch({
+      type: "ADD_BASKET",
+      payload: item,
+    });
+  };
+  const truncate = (string, n) => {
+    return string?.length > n ? string.substr(0, n - 1) + "..." : string;
+  };
   return (
     <div className={styles.product}>
       <div className={styles.productInfo}>
-        <p>{productDetail}</p>
+        <p>{truncate(`${productDetail}`, 150)}</p>
         <p className={styles.productRate}>
           <small>$</small>
           <strong>{productPrice}</strong>
         </p>
         <div className={styles.productRating}>
-          <p>{productRating}</p>
+          {Array(productRating)
+            .fill()
+            .map((_, i) => (
+              <p key={i}>⭐</p>
+            ))}
         </div>
       </div>
       <div className={styles.productImage}>

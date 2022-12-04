@@ -1,0 +1,23 @@
+.checkout {
+  display: flex;
+  background-color: #fff;
+  padding: 10px;
+  height: max-content;
+  .checkoutLeft {
+    padding: 10px;
+    width: 70%;
+    .amzonAdvImage {
+      width: 100%;
+      max-height: 300px;
+    }
+    .shoppingArea {
+      h2 {
+        margin: 20px 0px;
+      }
+    }
+  }
+  .checkoutRight {
+    padding: 10px;
+    width: 30%;
+  }
+}
