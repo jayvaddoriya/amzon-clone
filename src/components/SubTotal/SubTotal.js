@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import CurrencyFormat from "react-currency-format";
+import { getBasketTotal } from "../../context/reducer";
+import { StateContext } from "../../context/StateProvider";
 import styles from "./index.module.scss";
 
 const SubTotal = () => {
+  const { basket } = useContext(StateContext);
+  console.log(basket);
   return (
     <div className={styles.subTotal}>
       <CurrencyFormat
         renderText={(value) => (
           <>
             <p>
-              Subtotal ({value} items):<strong>{value}</strong>
+              Subtotal ({basket?.length} items):<strong>{value}</strong>
             </p>
             <small className={styles.conditionCheck}>
               <input type="checkbox" />
@@ -18,7 +22,7 @@ const SubTotal = () => {
           </>
         )}
         decimalScale={2}
-        value={0}
+        value={getBasketTotal(basket)}
         displayType="text"
         thousandSeparator={true}
         prefix="$"

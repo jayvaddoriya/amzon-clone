@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-import { truncate } from "../../context/reducer";
 import { StateContext } from "../../context/StateProvider";
 import styles from "./index.module.scss";
 
-const Product = ({
+const CheckOutProduct = ({
   id,
   productDetail,
   productPrice,
@@ -11,24 +10,19 @@ const Product = ({
   productImages,
 }) => {
   const { dispatch } = useContext(StateContext);
-  const handleOnAddBasket = () => {
-    const item = {
-      id: id,
-      productDetail: productDetail,
-      productPrice: productPrice,
-      productRating: productRating,
-      productImages: productImages,
-    };
+  const removeToBasket = () => {
     dispatch({
-      type: "ADD_BASKET",
-      payload: item,
+      type: "REMOVE_BASKET",
+      payload: id,
     });
   };
-
   return (
-    <div className={styles.product}>
+    <div className={styles.CheckOutProduct}>
+      <div className={styles.productImage}>
+        <img src={productImages} alt="product" />
+      </div>
       <div className={styles.productInfo}>
-        <p>{truncate(`${productDetail}`, 150)}</p>
+        <p>{productDetail}</p>
         <p className={styles.productRate}>
           <small>$</small>
           <strong>{productPrice}</strong>
@@ -40,15 +34,12 @@ const Product = ({
               <p key={i}>⭐</p>
             ))}
         </div>
-      </div>
-      <div className={styles.productImage}>
-        <img src={productImages} alt="product" />
-      </div>
-      <div className={styles.productBtn}>
-        <button onClick={handleOnAddBasket}>Add to basket</button>
+        <div className={styles.productBtn}>
+          <button onClick={removeToBasket}>Remove to basket</button>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Product;
+export default CheckOutProduct;

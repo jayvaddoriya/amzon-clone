@@ -8,7 +8,6 @@ import { StateContext } from "../../context/StateProvider";
 
 const Header = () => {
   const { basket } = useContext(StateContext);
-  console.log(basket);
   const navigate = useNavigate();
   const inputRef = useRef();
   const handleOnSearch = () => {

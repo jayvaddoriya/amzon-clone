@@ -1,0 +1,25 @@
+.CheckOutProduct {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 50px;
+  .productImage {
+    img {
+      height: 200px;
+      width: 200px;
+      object-fit: contain;
+    }
+  }
+  .productInfo {
+    .productRating {
+      display: flex;
+    }
+  }
+  .productBtn {
+    button {
+      background-color: #f0c14b;
+      color: #000;
+      border: 1px solid;
+      border-color: #a88734 #9c7e31 #846a29;
+    }
+  }
+}
