@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { toast } from "react-toastify";
 import { StateContext } from "../../context/StateProvider";
 import styles from "./index.module.scss";
 
@@ -15,6 +16,7 @@ const CheckOutProduct = ({
       type: "REMOVE_BASKET",
       payload: id,
     });
+    toast.success("REMOVE TO BASKET");
   };
   return (
     <div className={styles.CheckOutProduct}>

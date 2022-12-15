@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { toast } from "react-toastify";
 import { truncate } from "../../context/reducer";
 import { StateContext } from "../../context/StateProvider";
 import styles from "./index.module.scss";
@@ -23,6 +24,7 @@ const Product = ({
       type: "ADD_BASKET",
       payload: item,
     });
+    toast.success("ADD TO BASKET");
   };
 
   return (

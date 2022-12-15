@@ -1,0 +1,58 @@
+.login {
+  .logoDiv {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0px;
+    .logo {
+      height: 100%;
+    }
+  }
+  .logInBox {
+    display: flex;
+    justify-content: center;
+    .signInDiv {
+      width: 400px;
+      padding: 20px;
+      border: 1px solid;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background-color: #fff;
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        h5 {
+          margin-bottom: 0px !important;
+        }
+        input {
+          height: 50px;
+          margin-bottom: 10px;
+          border: 1px solid;
+          border-radius: 2px;
+        }
+        button {
+          background-color: #f0c14b;
+          color: #000;
+          border-radius: 2px;
+          font-weight: 500;
+          height: 40px;
+          border: 1px solid;
+          border-color: #a88734 #9c7e31 #846a29;
+        }
+      }
+      p {
+        font-size: 14px;
+        margin-bottom: 0;
+      }
+      button {
+        color: #000;
+        border-radius: 2px;
+        font-weight: 500;
+        height: 40px;
+        border: 1px solid;
+      }
+    }
+  }
+}
